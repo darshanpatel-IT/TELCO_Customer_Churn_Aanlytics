@@ -1,464 +1,399 @@
-TELCO Customer Churn Analytics
+# 📊 TELCO Customer Churn Analytics
 
-An end-to-end Customer Churn Analytics project built to understand why telecom customers leave, identify high-risk customer segments, and present actionable business insights using Excel, Python, PostgreSQL, and Power BI.
+<p align="center">
 
-Current scope: Data cleaning, exploratory data analysis, SQL business analysis, and an interactive Power BI dashboard.
-Machine learning is not included in the current version.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
 
-📌 Business Problem
+</p>
 
-Customer churn is a major challenge for subscription-based telecom businesses.
+---
 
-This project aims to answer:
+# 📌 Project Overview
 
-How many customers are churning?
+The **TELCO Customer Churn Analytics** project is an end-to-end Data Analytics project developed using **Excel, Python, PostgreSQL, SQL, and Power BI**.
 
-Which customer characteristics are associated with higher churn?
+The project analyzes telecom customer data to understand customer churn behavior, identify high-risk customer segments, and generate actionable business insights for improving customer retention.
 
-Which services, contracts, and payment methods show higher churn?
+The complete analytics workflow includes:
 
-Which customer segments represent the greatest retention risk?
+**Data Cleaning → Python EDA → Visualization → PostgreSQL SQL Analysis → Power BI Dashboard → Business Insights**
 
-What actions could help improve customer retention?
+> **Note:** Machine Learning is not included in the current version of this project.
 
-📂 Dataset
+---
 
-Dataset: Telco Customer Churn
+# 🎯 Business Objectives
 
-Records: 7,043 customers
-Features: 21 columns
+The project focuses on answering important business questions such as:
 
-Main Variables
+- What percentage of customers are churning?
+- Which contract types have the highest churn?
+- Which internet services are associated with higher churn?
+- Which payment methods have higher churn rates?
+- How does customer tenure relate to churn?
+- Which customer segments represent the highest retention risk?
+- Which customer characteristics are associated with lower or higher churn?
+- What strategies can help improve customer retention?
 
-Category
+---
 
-Variables
+# 🛠 Tech Stack
 
-Customer profile
+| Technology | Purpose |
+|------------|---------|
+| Excel | Data Cleaning & Validation |
+| Python | Exploratory Data Analysis |
+| Pandas | Data Manipulation & Analysis |
+| Matplotlib | Data Visualization |
+| Seaborn | Statistical Visualization |
+| PostgreSQL | Database Management |
+| SQL | Business Analysis |
+| Power BI | Interactive Dashboard |
+| DAX | KPI Calculations |
+| GitHub | Version Control & Portfolio |
 
-gender, SeniorCitizen, Partner, Dependents
+---
 
-Services
+# 📂 Project Structure
 
-PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies
-
-Contract & billing
-
-Contract, PaperlessBilling, PaymentMethod
-
-Financial
-
-MonthlyCharges, TotalCharges
-
-Customer lifecycle
-
-tenure
-
-Target
-
-Churn
-
-🧹 Data Cleaning
-
-The dataset was reviewed and cleaned before analysis.
-
-Data-quality checks
-
-Verified 7,043 records and 21 columns
-
-Checked for duplicate rows → 0 duplicates
-
-Checked for duplicate customer IDs → 0 duplicates
-
-Checked for missing values
-
-Investigated blank TotalCharges values
-
-Found 11 blank TotalCharges records
-
-All 11 records had tenure = 0
-
-Converted TotalCharges to numeric
-
-Replaced the 11 verified blank TotalCharges values with 0
-
-Checked categorical values for unexpected categories
-
-Validated numerical ranges such as tenure and MonthlyCharges
-
-🐍 Python EDA
-
-Tools
-
-Python
-
-Pandas
-
-Matplotlib
-
-Seaborn
-
-Analysis Performed
-
-Overall churn distribution
-
-Gender vs churn
-
-Senior citizen status vs churn
-
-Partner and dependents vs churn
-
-Phone and multiple-line services
-
-Internet service
-
-Online security and backup
-
-Device protection
-
-Technical support
-
-Streaming services
-
-Contract type
-
-Paperless billing
-
-Payment method
-
-Tenure analysis
-
-Monthly charge analysis
-
-Total charge analysis
-
-Tenure vs total charges
-
-Correlation analysis
-
-Contract + tenure segmentation
-
-Contract + monthly-charge segmentation
-
-Internet-service + contract segmentation
-
-Payment-method + contract segmentation
-
-📊 Key EDA Findings
-
-Overall Churn
-
-Total customers: 7,043
-
-Churned customers: 1,869
-
-Overall churn rate: 26.54%
-
-Contract
-
-Contract
-
-Churn Rate
-
-Month-to-month
-
-42.71%
-
-One year
-
-11.27%
-
-Two year
-
-2.83%
-
-Internet Service
-
-Internet Service
-
-Churn Rate
-
-Fiber optic
-
-41.89%
-
-DSL
-
-18.96%
-
-No internet service
-
-7.40%
-
-Payment Method
-
-Payment Method
-
-Churn Rate
-
-Electronic check
-
-45.29%
-
-Mailed check
-
-19.11%
-
-Bank transfer (automatic)
-
-16.71%
-
-Credit card (automatic)
-
-15.24%
-
-Tenure
-
-Customers in the first 0–12 months had a 47.44% churn rate, while customers with 61–72 months of tenure had a 6.61% churn rate.
-
-Support Services
-
-Customers without these services showed substantially higher churn:
-
-No OnlineSecurity: 41.77%
-
-No TechSupport: 41.64%
-
-No OnlineBackup: 39.93%
-
-No DeviceProtection: 39.13%
-
-🔥 High-Risk Customer Segments
-
-Multivariate analysis was used to go beyond individual features.
-
-Fiber optic + Month-to-month
-
-Customers: 2,128
-
-Churn rate: 54.61%
-
-Electronic check + Month-to-month
-
-Customers: 1,850
-
-Churn rate: 53.73%
-
-Fiber optic + Month-to-month + Electronic check
-
-Customers: 1,307
-
-Churned customers: 789
-
-Churn rate: 60.37%
-
-These findings describe associations observed in the dataset. They should not be interpreted as proof that a particular contract, service, or payment method causes churn.
-
-🗄️ PostgreSQL Analysis
-
-The cleaned dataset was imported into PostgreSQL for business-focused SQL analysis.
-
-The SQL work included:
-
-Customer and churn KPIs
-
-Average tenure and charges
-
-Contribution of contract types to total churn
-
-Payment-method contribution to total churn
-
-High-risk tenure segments
-
-High-risk contract segments
-
-Multi-dimensional customer segmentation
-
-GROUP BY
-
-FILTER
-
-HAVING
-
-CTEs
-
-Window functions such as RANK(), DENSE_RANK(), and ROW_NUMBER()
-
-The project includes 25 business-oriented SQL questions, progressing from core KPIs to advanced customer segmentation.
-
-📈 Power BI Dashboard
-
-A one-page interactive TELCO Customer Churn Analytics dashboard was created.
-
-Dashboard Components
-
-TELCO branding and custom header
-
-KPI cards
-
-Total Customers
-
-Churned Customers
-
-Churn Rate
-
-Average Monthly Charges
-
-Average Tenure
-
-Churn Rate by Contract Type
-
-Churn Rate by Internet Service
-
-Churn Rate by Payment Method
-
-Churn Rate by Tenure
-
-High-Risk Customer Segments matrix
-
-Conditional formatting for churn risk
-
-Interactive slicers
-
-Gender
-
-Senior Citizen
-
-Contract
-
-Internet Service
-
-Payment Method
-
-Tech Support
-
-Key Insights section
-
-Dashboard KPIs
-
-KPI
-
-Value
-
-Total Customers
-
-7,043
-
-Churned Customers
-
-1,869
-
-Churn Rate
-
-26.54%
-
-Average Monthly Charges
-
-$64.76
-
-Average Tenure
-
-32.37 months
-
-💡 Business Recommendations
-
-Improve first-year customer retention
-Customers in their first 12 months show the highest churn. Strengthening onboarding and early engagement should be a priority.
-
-Encourage longer-term contracts
-Month-to-month customers have much higher churn than one- and two-year contract customers.
-
-Prioritize high-risk segments
-Give special attention to customers combining high-risk characteristics such as fiber optic service, month-to-month contracts, and electronic-check payment.
-
-Investigate support and protection services
-Customers without TechSupport, OnlineSecurity, OnlineBackup, or DeviceProtection show higher churn and may be useful targets for retention experiments.
-
-Investigate electronic-check customers
-Electronic-check users have the highest churn rate among payment methods. The business should investigate the underlying customer or payment experience rather than assuming the payment method itself causes churn.
-
-🛠️ Technology Stack
-
-Tool
-
-Purpose
-
-Excel
-
-Data cleaning and validation
-
-Python
-
-Data analysis and EDA
-
-Pandas
-
-Data manipulation
-
-Matplotlib
-
-Visualization
-
-Seaborn
-
-Statistical visualization
-
-PostgreSQL
-
-SQL business analysis
-
-Power BI
-
-Interactive dashboard
-
-GitHub
-
-Version control and portfolio
-
-📁 Suggested Project Structure
-
-Customer-Churn-Analytics/
+```text
+TELCO-Customer-Churn-Analytics/
 │
-├── data/
-│   └── Telco-Customer-Churn-Clean.csv
+├── Excel/
+│   └── Telco-Customer-Churn-Clean.xlsx
 │
-├── python/
+├── Python/
 │   └── Customers-churn-EDA.py
 │
-├── sql/
+├── SQL/
 │   └── customer_churn_analysis.sql
 │
-├── powerbi/
-│   └── Customer-Churn.pbix
+├── Power BI/
+│   ├── Customer-Churn.pbix
+│   └── Customer-Churn.pdf
 │
-├── images/
-│   └── Customer-Churn-Dashboard.png
+├── Images/
+│   ├── Customer-Churn-Dashboard.png
+│   
 │
 └── README.md
 
-🎯 Project Outcome
+---
 
-This project demonstrates an end-to-end Data Analyst workflow:
+🧹 Data Cleaning
 
-Raw Dataset
-     ↓
-Excel Data Cleaning
-     ↓
+The dataset was cleaned and validated before performing analysis.
+
+Data Cleaning Steps
+Verified 7,043 customer records
+Verified 21 columns
+Checked duplicate rows → 0
+Checked duplicate customer IDs → 0
+Checked missing values
+Investigated blank TotalCharges records
+Found 11 blank TotalCharges values
+Verified all 11 customers had tenure = 0
+Replaced verified blank TotalCharges values with 0
+Converted TotalCharges into a numeric field
+Checked categorical columns for inconsistent values
+Verified numerical fields such as tenure and MonthlyCharges
+🐍 Python EDA
+
+Python was used to perform exploratory data analysis and identify relationships between customer characteristics and churn.
+
+EDA Analysis
+Overall churn distribution
+Gender vs Churn
+Senior Citizen vs Churn
+Partner vs Churn
+Dependents vs Churn
+Phone Service vs Churn
+Multiple Lines vs Churn
+Internet Service vs Churn
+Online Security vs Churn
+Online Backup vs Churn
+Device Protection vs Churn
+Tech Support vs Churn
+Streaming TV vs Churn
+Streaming Movies vs Churn
+Contract vs Churn
+Paperless Billing vs Churn
+Payment Method vs Churn
+Tenure analysis
+Monthly Charges analysis
+Total Charges analysis
+Tenure vs Total Charges
+Correlation analysis
+Contract + Tenure segmentation
+Contract + Monthly Charges segmentation
+Internet Service + Contract segmentation
+Payment Method + Contract segmentation
+📊 Visualization
+
+The Python analysis used Matplotlib and Seaborn to create visualizations including:
+
+Count plots
+Bar charts
+Box plots
+Scatter plots
+Line charts
+Correlation heatmaps
+
+These visualizations were used to identify customer churn patterns and support business conclusions.
+
+🗄️ PostgreSQL & SQL Analysis
+
+The cleaned dataset was imported into PostgreSQL for business-oriented SQL analysis.
+
+The SQL analysis includes:
+
+Customer churn KPIs
+Average tenure analysis
+Average monthly charge analysis
+Average total charge analysis
+Churn contribution analysis
+Contract analysis
+Payment method analysis
+Internet service analysis
+Tenure segmentation
+High-risk customer segmentation
+Multi-dimensional customer analysis
+CTEs
+Aggregate functions
+FILTER
+GROUP BY
+HAVING
+RANK()
+DENSE_RANK()
+ROW_NUMBER()
+Window functions
+
+The project contains 25 business-focused SQL questions ranging from core KPIs to advanced customer segmentation.
+
+📈 Power BI Dashboard
+
+A professional one-page TELCO Customer Churn Analytics Dashboard was developed in Power BI.
+
+Dashboard KPIs
+Total Customers → 7,043
+Churned Customers → 1,869
+Churn Rate → 26.54%
+Average Monthly Charges → $64.76
+Average Tenure → 32.37 Months
+Dashboard Visuals
+Churn Rate by Contract Type
+Churn Rate by Internet Service
+Churn Rate by Payment Method
+Churn Rate by Tenure
+High-Risk Customer Segments Matrix
+Conditional Formatting for Churn Risk
+Interactive Filters
+Key Insights Panel
+Interactive Filters
+Gender
+Senior Citizen
+Contract
+Internet Service
+Payment Method
+Tech Support
+
+---
+
+🔥 Key Insights
+
+Based on the analysis performed in Python, PostgreSQL, and Power BI, the following major business insights were identified:
+
+📄 Contract Analysis
+Month-to-month customers have the highest churn rate at 42.71%.
+One-year contract customers have a churn rate of 11.27%.
+Two-year contract customers have the lowest churn rate at 2.83%.
+🌐 Internet Service Analysis
+Fiber optic customers have the highest churn rate at 41.89%.
+DSL customers have a churn rate of 18.96%.
+Customers without internet service have the lowest churn rate at 7.40%.
+💳 Payment Method Analysis
+Electronic-check customers have the highest churn rate at 45.29%.
+Mailed-check customers have a churn rate of 19.11%.
+Bank-transfer customers have a churn rate of 16.71%.
+Credit-card customers have the lowest churn rate at 15.24%.
+⏳ Tenure Analysis
+Customers with 0–12 months of tenure have a churn rate of 47.44%.
+Customers with 61–72 months of tenure have a churn rate of only 6.61%.
+Churn decreases substantially as customer tenure increases.
+🛡 Service Analysis
+
+Customers without additional services show substantially higher churn:
+
+No OnlineSecurity → 41.77%
+No TechSupport → 41.64%
+No OnlineBackup → 39.93%
+No DeviceProtection → 39.13%
+🚨 High-Risk Customer Segments
+🔴 Fiber Optic + Month-to-Month
+Customer Count → 2,128
+Churn Rate → 54.61%
+🔴 Electronic Check + Month-to-Month
+Customer Count → 1,850
+Churn Rate → 53.73%
+🔴 Fiber Optic + Month-to-Month + Electronic Check
+Customer Count → 1,307
+Churned Customers → 789
+Churn Rate → 60.37%
+
+This segment represents one of the strongest high-risk patterns identified in the analysis.
+
+These results represent observed associations in the dataset and should not be interpreted as proof that a specific service, contract, or payment method causes churn.
+
+---
+
+💡 Business Recommendations
+
+1. Improve First-Year Customer Retention
+Strengthen customer onboarding.
+Monitor customers during their first 12 months.
+Introduce early engagement and retention programs.
+2. Encourage Long-Term Contracts
+Provide incentives for month-to-month customers to move toward one-year or two-year contracts.
+Offer targeted discounts or value-added services.
+3. Prioritize High-Risk Customer Segments
+Monitor fiber-optic month-to-month customers closely.
+Prioritize customers who combine high-risk characteristics.
+Develop targeted retention campaigns instead of treating all customers equally.
+4. Investigate Payment Experience
+Analyze why electronic-check customers show significantly higher churn.
+Review payment convenience, customer experience, and billing processes.
+Consider promoting automated payment options where appropriate.
+5. Strengthen Customer Support
+Investigate the high churn rate among customers without TechSupport and OnlineSecurity.
+Consider targeted service bundles or retention offers.
+Monitor whether support engagement improves customer retention.
+
+---
+
+📈 Expected Business Impact
+
+Implementing these recommendations can help the business:
+
+✅ Improve first-year customer retention
+✅ Reduce customer churn
+✅ Identify high-risk customers earlier
+✅ Improve customer support strategies
+✅ Optimize contract offerings
+✅ Improve payment experience
+✅ Strengthen customer loyalty
+✅ Support data-driven retention decisions
+✅ Improve customer lifetime value
+⭐ Features
+Interactive Power BI Dashboard
+Dynamic KPI Cards
+Customer Churn Analysis
+High-Risk Customer Segmentation
+Conditional Formatting
+Interactive Slicers
 Python EDA
-     ↓
-Matplotlib / Seaborn Visualization
-     ↓
-PostgreSQL Business Analysis
-     ↓
-Power BI Interactive Dashboard
-     ↓
-Business Insights & Recommendations
+Matplotlib Visualizations
+Seaborn Visualizations
+PostgreSQL Database
+SQL Business Analysis
+CTEs
+Window Functions
+DAX Measures
+Business Insights
+Data Cleaning & Validation
 
-The project focuses on turning customer data into actionable retention insights, rather than only producing charts or SQL queries.
+---
 
-👤 Author
+🚀 How to Run
+
+1️⃣ Clone Repository
+git clone https://github.com/darshanpatel-IT/TELCO-Customer-Churn-Analytics.git
+
+2️⃣ Data Cleaning
+
+Use the cleaned dataset available inside:
+
+Data/
+
+3️⃣ Python EDA
+
+Navigate to:
+
+Python/
+
+Run:
+
+python Customers-churn-EDA.py
+
+Make sure the required packages are installed:
+
+pip install pandas matplotlib seaborn
+
+4️⃣ PostgreSQL
+
+Create a PostgreSQL database and import the cleaned dataset.
+
+Then execute the SQL queries located inside:
+
+SQL/
+
+5️⃣ Power BI
+
+Open:
+
+Power BI/Customer-Churn.pbix
+
+Refresh the data connection if required.
+
+---
+
+💼 Skills Demonstrated
+
+Excel
+Python
+Pandas
+Matplotlib
+Seaborn
+PostgreSQL
+SQL
+CTEs
+Window Functions
+Data Cleaning
+Exploratory Data Analysis
+Data Visualization
+Data Segmentation
+DAX
+Power BI
+Dashboard Design
+Business Intelligence
+Business Analysis
+Customer Retention Analytics
+
+---
+
+📜 License
+
+This project is developed for educational, internship, and portfolio purposes.
+
+---
+
+👨‍💻 Author
 
 Darshan Patel
 
+---
+
+Connect with me
+
 GitHub: https://github.com/darshanpatel-IT
 LinkedIn: https://www.linkedin.com/in/darshan-patel-a75124288
+
+
+
+
