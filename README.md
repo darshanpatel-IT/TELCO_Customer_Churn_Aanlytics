@@ -81,13 +81,16 @@ TELCO-Customer-Churn-Analytics/
 │
 ├── Images/
 │   ├── Customer-Churn-Dashboard.png
-│   
+│   └── Customer-Churn-Full-HD.png
 │
 └── README.md
 
+GitHub: https://github.com/darshanpatel-IT
+LinkedIn: https://www.linkedin.com/in/darshan-patel-a75124288
+
 ---
 
-🧹 Data Cleaning
+# 🧹 Data Cleaning
 
 The dataset was cleaned and validated before performing analysis.
 
@@ -104,6 +107,7 @@ Replaced verified blank TotalCharges values with 0
 Converted TotalCharges into a numeric field
 Checked categorical columns for inconsistent values
 Verified numerical fields such as tenure and MonthlyCharges
+
 🐍 Python EDA
 
 Python was used to perform exploratory data analysis and identify relationships between customer characteristics and churn.
@@ -126,25 +130,26 @@ Streaming Movies vs Churn
 Contract vs Churn
 Paperless Billing vs Churn
 Payment Method vs Churn
-Tenure analysis
-Monthly Charges analysis
-Total Charges analysis
+Tenure Analysis
+Monthly Charges Analysis
+Total Charges Analysis
 Tenure vs Total Charges
-Correlation analysis
-Contract + Tenure segmentation
-Contract + Monthly Charges segmentation
-Internet Service + Contract segmentation
-Payment Method + Contract segmentation
+Correlation Analysis
+Contract + Tenure Segmentation
+Contract + Monthly Charges Segmentation
+Internet Service + Contract Segmentation
+Payment Method + Contract Segmentation
+
 📊 Visualization
 
 The Python analysis used Matplotlib and Seaborn to create visualizations including:
 
-Count plots
-Bar charts
-Box plots
-Scatter plots
-Line charts
-Correlation heatmaps
+Count Plots
+Bar Charts
+Box Plots
+Scatter Plots
+Line Charts
+Correlation Heatmaps
 
 These visualizations were used to identify customer churn patterns and support business conclusions.
 
@@ -152,28 +157,27 @@ These visualizations were used to identify customer churn patterns and support b
 
 The cleaned dataset was imported into PostgreSQL for business-oriented SQL analysis.
 
-The SQL analysis includes:
-
-Customer churn KPIs
-Average tenure analysis
-Average monthly charge analysis
-Average total charge analysis
-Churn contribution analysis
-Contract analysis
-Payment method analysis
-Internet service analysis
-Tenure segmentation
-High-risk customer segmentation
-Multi-dimensional customer analysis
+SQL Analysis Includes
+Customer Churn KPIs
+Average Tenure Analysis
+Average Monthly Charge Analysis
+Average Total Charge Analysis
+Churn Contribution Analysis
+Contract Analysis
+Payment Method Analysis
+Internet Service Analysis
+Tenure Segmentation
+High-Risk Customer Segmentation
+Multi-dimensional Customer Analysis
 CTEs
-Aggregate functions
+Aggregate Functions
 FILTER
 GROUP BY
 HAVING
 RANK()
 DENSE_RANK()
 ROW_NUMBER()
-Window functions
+Window Functions
 
 The project contains 25 business-focused SQL questions ranging from core KPIs to advanced customer segmentation.
 
@@ -182,11 +186,11 @@ The project contains 25 business-focused SQL questions ranging from core KPIs to
 A professional one-page TELCO Customer Churn Analytics Dashboard was developed in Power BI.
 
 Dashboard KPIs
-Total Customers → 7,043
-Churned Customers → 1,869
-Churn Rate → 26.54%
-Average Monthly Charges → $64.76
-Average Tenure → 32.37 Months
+Total Customers: 7,043
+Churned Customers: 1,869
+Churn Rate: 26.54%
+Average Monthly Charges: $64.76
+Average Tenure: 32.37 Months
 Dashboard Visuals
 Churn Rate by Contract Type
 Churn Rate by Internet Service
@@ -206,7 +210,7 @@ Tech Support
 
 ---
 
-🔥 Key Insights
+# 🔥 Key Insights
 
 Based on the analysis performed in Python, PostgreSQL, and Power BI, the following major business insights were identified:
 
@@ -253,7 +257,7 @@ These results represent observed associations in the dataset and should not be i
 
 ---
 
-💡 Business Recommendations
+# 💡 Business Recommendations
 
 1. Improve First-Year Customer Retention
 Strengthen customer onboarding.
@@ -264,7 +268,7 @@ Provide incentives for month-to-month customers to move toward one-year or two-y
 Offer targeted discounts or value-added services.
 3. Prioritize High-Risk Customer Segments
 Monitor fiber-optic month-to-month customers closely.
-Prioritize customers who combine high-risk characteristics.
+Prioritize customers who combine multiple high-risk characteristics.
 Develop targeted retention campaigns instead of treating all customers equally.
 4. Investigate Payment Experience
 Analyze why electronic-check customers show significantly higher churn.
@@ -277,7 +281,7 @@ Monitor whether support engagement improves customer retention.
 
 ---
 
-📈 Expected Business Impact
+# 📈 Expected Business Impact
 
 Implementing these recommendations can help the business:
 
@@ -310,7 +314,7 @@ Data Cleaning & Validation
 
 ---
 
-🚀 How to Run
+# 🚀 How to Run
 
 1️⃣ Clone Repository
 git clone https://github.com/darshanpatel-IT/TELCO-Customer-Churn-Analytics.git
@@ -319,7 +323,7 @@ git clone https://github.com/darshanpatel-IT/TELCO-Customer-Churn-Analytics.git
 
 Use the cleaned dataset available inside:
 
-Data/
+Excel/
 
 3️⃣ Python EDA
 
@@ -331,7 +335,7 @@ Run:
 
 python Customers-churn-EDA.py
 
-Make sure the required packages are installed:
+Install required packages:
 
 pip install pandas matplotlib seaborn
 
@@ -353,7 +357,7 @@ Refresh the data connection if required.
 
 ---
 
-💼 Skills Demonstrated
+# 💼 Skills Demonstrated
 
 Excel
 Python
@@ -377,23 +381,23 @@ Customer Retention Analytics
 
 ---
 
-📜 License
+# 📜 License
 
 This project is developed for educational, internship, and portfolio purposes.
 
 ---
 
-👨‍💻 Author
+# 👨‍💻 Author
 
 Darshan Patel
 
 ---
 
-Connect with me
+# Connect with me
 
 GitHub: https://github.com/darshanpatel-IT
 LinkedIn: https://www.linkedin.com/in/darshan-patel-a75124288
 
-
+---
 
 
